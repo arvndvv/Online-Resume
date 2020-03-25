@@ -883,6 +883,9 @@ close:hover {
     }
   }
   @media only screen and (max-width: 850px) {
+    .main{
+    height:100vh
+    }
     .menu {
       margin-left: 150px;
     }
