@@ -4,9 +4,10 @@ body,
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x:hidden;
 }
 body {
+  
+  overflow-x:hidden;
   background: #0e2535;
 }
 #container {
