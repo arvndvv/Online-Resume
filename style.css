@@ -1032,7 +1032,7 @@ close:hover {
       display: inherit;
     }
     detail toleft h5 {
-      margin-right: 100%;
+      display: block;
     }
     detail toleft h4 {
       font-size: 14px;
@@ -1204,6 +1204,11 @@ close:hover {
   }
   #about h1 {
     font-size: 24px;
+  }
+}
+@media only screen and (max-width: 415px) and (min-height: 1000px) {
+  .dp {
+    margin-top: 107%;
   }
 }
 @media only screen and (max-width: 380px) and (min-height: 812px) {
