@@ -16,7 +16,7 @@ body {
 }
 main {
   background: #183d57;
-  height: 80vh;
+  min-height: 80vh;
   width: 80vw;
   border: 10px solid #0e2535;
   display: flex;
@@ -596,7 +596,10 @@ detail toleft h5 {
   top: 5px;
   position: absolute;
 }
-
+hobby {
+  display: flex;
+  width: 100%;
+}
 .hobby {
   color: #39bea6;
   cursor: pointer;
@@ -780,6 +783,27 @@ close:hover {
   background: #09f;
   position: absolute;
 }
+@media only screen and (max-width: 1280px) {
+  .gallery {
+    right: 10%;
+  }
+  .gallery::after {
+    height: 310px;
+    top: -18%;
+    right: 200%;
+  }
+  .projects::after {
+    height: 310px;
+    bottom: -35%;
+    left: 215%;
+  }
+  .aboutme {
+    right: 5%;
+  }
+  .dp {
+    left: 5%;
+  }
+}
 @media only screen and (max-width: 1260px) {
   .gallery::after {
     top: -28%;
@@ -890,6 +914,7 @@ close:hover {
       left: 5%;
     }
   }
+
   @media only screen and (max-width: 850px) {
     .menu {
       margin-left: 150px;
@@ -926,7 +951,22 @@ close:hover {
       margin-left: 180px;
     }
   }
-
+  @media only screen and (max-width: 834px) {
+    .gallery {
+      top: 20%;
+    }
+    .gallery::after {
+      top: 60%;
+      right: 105%;
+      transform: rotate(35deg);
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .gallery {
+      top: 20%;
+      right: 5%;
+    }
+  }
   @media only screen and (max-width: 700px) {
     .gallery {
       width: 100px;
@@ -937,7 +977,7 @@ close:hover {
       left: 20px;
     }
     main {
-      height: 100vh;
+      min-height: 100vh;
     }
   }
 
@@ -1081,11 +1121,88 @@ close:hover {
   }
   detail toleft h1::before,
   detail toright h1::before {
-    width: 90%;
+    width: 10vw;
   }
   detail toright h5 {
     display: block;
     margin-bottom: 20px;
+  }
+}
+@media only screen and (width: 768px) and (height: 750px) {
+  main {
+    min-height: 300vh;
+  }
+}
+
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .aboutme::after {
+    top: -275%;
+    right: 200%;
+    transform: rotate(-50deg);
+    height: 265px;
+  }
+  .gallery::after {
+    top: 62%;
+    right: 138%;
+    height: 195px;
+    transform: rotate(45deg);
+  }
+  .writing::after {
+    bottom: -62%;
+    left: 110%;
+    transform: rotate(-50deg);
+    height: 100px;
+  }
+  .projects::after {
+    bottom: 45%;
+    left: 150%;
+    transform: rotate(45deg);
+    height: 225px;
+  }
+}
+@media only screen and (width: 800px) and (height: 1280px) {
+  .writing::after {
+    bottom: -80%;
+    left: 125%;
+    height: 130px;
+  }
+  .projects::after {
+    bottom: 40%;
+    left: 165%;
+  }
+  .aboutme::after {
+    top: -215%;
+    right: 145%;
+    height: 200px;
+  }
+}
+@media only screen and (width: 600px) and (height: 960px) {
+  .gallery::after {
+    height: 190px;
+    transform: rotate(25deg);
+  }
+  .writing::after {
+    left: 75%;
+    transform: rotate(-165deg);
+    height: 185px;
+  }
+}
+@media only screen and (width: 1440px) and (height: 900px) {
+  .gallery {
+    top: 15%;
+    right: 5%;
+  }
+  .aboutme::after {
+    height: 360px;
+
+    top: -300%;
+    right: 300%;
+  }
+  .projects::after {
+    height: 300px;
+
+    bottom: -30%;
+    left: 220%;
   }
 }
 @media only screen and (max-width: 490px) {
@@ -1157,12 +1274,20 @@ close:hover {
   .m:hover {
     cursor: pointer;
   }
+  e {
+    font-size: 14px;
+    left: 30%;
+  }
+
+  .men:hover e {
+    top: 75%;
+  }
   e:hover {
     cursor: pointer;
   }
   main {
     border-bottom: 0;
-    height: 95vh;
+    min-height: 95vh;
   }
   detail {
     display: block;
@@ -1225,6 +1350,34 @@ close:hover {
   }
   .about h1 {
     font-size: 48px;
+  }
+}
+@media only screen and (max-width: 365px) {
+  .about st {
+    font-size: 50px;
+  }
+  .about h1 {
+    font-size: 40px;
+  }
+  .about h4 {
+    font-size: 18px;
+  }
+  e {
+    font-size: 14px;
+    left: 40%;
+  }
+  .dp {
+    top: 50%;
+    width: 160px;
+    height: 160px;
+  }
+  .dp::after {
+    width: 160px;
+    height: 160px;
+  }
+  .dp::before {
+    width: 130px;
+    height: 130px;
   }
 } /*
 @media only screen and (max-width: 416px) {
