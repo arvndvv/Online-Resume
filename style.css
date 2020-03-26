@@ -6,9 +6,8 @@ body,
   padding: 0;
 }
 body {
-  
-  overflow-x:hidden;
-  background: #0e2535;
+  background: #0b151d;
+  overflow-x: hidden;
 }
 #container {
   background: #0e2535;
@@ -18,7 +17,8 @@ body {
 main {
   background: #183d57;
   height: 80vh;
-  width: 98vw;
+  width: 80vw;
+  border: 10px solid #0e2535;
   display: flex;
   position: relative;
   margin: auto;
@@ -95,10 +95,16 @@ main {
   display: flex;
   flex-direction: column;
 }
+.about st {
+  font-family: "Lobster Two", cursive;
+
+  font-size: 70px;
+  font-weight: 900;
+}
 .about h1 {
   color: #3cada0;
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 0px;
   font-family: "Pacifico", cursive;
 
@@ -115,7 +121,7 @@ main {
 .about h4 {
   color: white;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
 
   font-family: "Mitr", sans-serif;
 }
@@ -282,11 +288,15 @@ e {
   top: 100%;
   opacity: 1;
 }
+
 detail {
   display: flex;
   flex-direction: row;
-  width: 98vw;
+  width: 80vw;
   margin: auto;
+
+  border: 10px solid #0e2535;
+  background: #0e2535;
   padding-bottom: 40px;
   position: relative;
 }
@@ -313,7 +323,7 @@ detail toright h1 {
 }
 detail toright h1::before {
   content: "";
-  width: 80%;
+  width: 6.5%;
   margin-top: 50px;
   height: 5px;
   background: #09f;
@@ -326,7 +336,6 @@ detail toright h4 {
   margin-top: 30px;
   font-size: 20px;
   font-weight: 700;
-  margin-left: 40px;
 
   display: inline;
   font-family: "Sen", sans-serif;
@@ -334,13 +343,12 @@ detail toright h4 {
 detail toright p {
   color: white;
   margin: 20px;
-  margin-left: 60px;
   font-family: "Sen", sans-serif;
 }
 detail toright h5 {
   color: white;
   font-weight: 700;
-  margin-left: 40px;
+  margin-left: 20px;
   font-size: 14px;
   font-family: "Sen", sans-serif;
   display: inline;
@@ -353,7 +361,7 @@ detail toleft h1 {
 }
 detail toleft h1::before {
   content: "";
-  width: 90%;
+  width: 20%;
   margin-top: 50px;
   height: 5px;
   background: #09f;
@@ -366,7 +374,6 @@ detail toleft h4 {
   margin-top: 30px;
   font-size: 20px;
   font-weight: 700;
-  margin-left: 40px;
 
   display: inline;
   font-family: "Sen", sans-serif;
@@ -375,13 +382,14 @@ detail toleft h4 {
 detail toleft h5 {
   color: white;
   font-weight: 700;
-  margin-left: 40px;
+  margin-left: 20px;
   font-size: 14px;
   font-family: "Sen", sans-serif;
   display: inline;
 }
 .sk {
   margin-bottom: 0px;
+  margin-left: 25px;
 }
 .progress {
   width: 350px;
@@ -392,7 +400,7 @@ detail toleft h5 {
   transition: 0.5s ease;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 10px;
-  margin-left: 38px;
+  margin-left: 20px;
   background: rgba(205, 205, 205, 0.2);
 }
 .ui::before {
@@ -475,11 +483,11 @@ detail toleft h5 {
     width: 0;
   }
   to {
-    width: 55%;
+    width: 65%;
   }
 }
 .python::after {
-  content: "55%";
+  content: "65%";
   font-family: "Sen", sans-serif;
   color: #39bea6;
   font-weight: 900;
@@ -489,10 +497,10 @@ detail toleft h5 {
   top: 5px;
   position: absolute;
 }
-.fend::before {
+.cpp::before {
   content: "";
   width: 0%;
-  animation: fend 1s 3s ease forwards;
+  animation: cpp 1s 2s ease forwards;
   transition: 0.5s ease;
   height: 5px;
   margin-bottom: -50px;
@@ -500,55 +508,56 @@ detail toleft h5 {
   position: absolute;
   border-bottom-right-radius: 15px;
 }
-@keyframes fend {
+@keyframes cpp {
   from {
     width: 0;
   }
   to {
-    width: 75%;
+    width: 55%;
   }
 }
-.fend::after {
-  content: "75%";
+.cpp::after {
+  content: "55%";
+  font-family: "Sen", sans-serif;
+  color: #39bea6;
+  font-weight: 900;
+  opacity: 0;
+  animation: opacity 1s 3s ease forwards;
+  margin-left: 180px;
+  top: 5px;
+  position: absolute;
+}
+.fs::before {
+  content: "";
+  width: 0%;
+  animation: fs 1s 3s ease forwards;
+  transition: 0.5s ease;
+  height: 5px;
+  margin-bottom: -50px;
+  background: #39bea6;
+  position: absolute;
+  border-bottom-right-radius: 15px;
+}
+@keyframes fs {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+.fs::after {
+  content: "70%";
   font-family: "Sen", sans-serif;
   color: #39bea6;
   font-weight: 900;
   opacity: 0;
   animation: opacity 1s 4s ease forwards;
-  margin-left: 250px;
+  margin-left: 180px;
   top: 5px;
   position: absolute;
 }
-.bend::before {
-  content: "";
-  width: 0%;
-  animation: bend 1s 4s ease forwards;
-  transition: 0.5s ease;
-  height: 5px;
-  margin-bottom: -50px;
-  background: #39bea6;
-  position: absolute;
-  border-bottom-right-radius: 15px;
-}
-@keyframes bend {
-  from {
-    width: 0;
-  }
-  to {
-    width: 65%;
-  }
-}
-.bend::after {
-  content: "65%";
-  font-family: "Sen", sans-serif;
-  color: #39bea6;
-  font-weight: 900;
-  opacity: 0;
-  animation: opacity 1s 5s ease forwards;
-  margin-left: 250px;
-  top: 5px;
-  position: absolute;
-}
+
 .ptest::before {
   content: "";
   width: 0%;
@@ -587,12 +596,26 @@ detail toleft h5 {
   top: 5px;
   position: absolute;
 }
-hobby {
-  position: relative;
-  width: 100%;
+detail hobby h1 {
+  color: rgb(221, 221, 221);
   margin: 20px;
-  margin-left: 40px;
-  font-size: 30px;
+  margin-left: 20px;
+  font-size: 34px;
+  font-weight: 900;
+  font-family: "Mitr", sans-serif;
+}
+detail hobby h1::before {
+  content: "";
+  width: 5%;
+  margin-top: 50px;
+  height: 5px;
+  background: #09f;
+  position: absolute;
+}
+detail hobby {
+  position: relative;
+
+  font-size: 36px;
 }
 .hobby {
   color: #39bea6;
@@ -600,7 +623,7 @@ hobby {
   display: inline-block;
   margin-right: 20px;
   position: relative;
-
+  margin-left: 20px;
   font-family: "Sen", sans-serif;
   width: max-content;
   transition: 0.3s ease;
@@ -668,15 +691,16 @@ hobby {
 #about {
   position: absolute;
   width: 50vw;
-  height: 50vh;
+  min-height: 50vh;
   margin: auto;
   top: 25%;
   left: 25%;
+  padding-bottom: 30px;
   transition: all 0.5 ease;
   display: flex;
   border-radius: 25px;
   border: 5px solid #39bea6;
-  z-index: 1000;
+  z-index: 1250;
   transform: scaleY(0);
   background: #0e2535;
   text-align: center;
@@ -852,6 +876,10 @@ close:hover {
     }
   }
   @media only screen and (max-width: 800px) {
+    main,
+    detail {
+      width: 98vw;
+    }
     .writing::after {
       bottom: -38%;
       left: 117%;
@@ -884,9 +912,6 @@ close:hover {
     }
   }
   @media only screen and (max-width: 850px) {
-    .main{
-    height:100vh
-    }
     .menu {
       margin-left: 150px;
     }
@@ -912,10 +937,10 @@ close:hover {
     .ui::after {
       margin-left: 180px;
     }
-    .fend::after {
+    .fs::after {
       margin-left: 180px;
     }
-    .bend::after {
+    .cpp::after {
       margin-left: 180px;
     }
     .ptest::after {
@@ -931,6 +956,9 @@ close:hover {
     .gallery .fa {
       top: 22px;
       left: 20px;
+    }
+    main {
+      height: 100vh;
     }
   }
 
@@ -1016,10 +1044,10 @@ close:hover {
     .python::after {
       margin-left: 170px;
     }
-    .fend::after {
+    .cpp::after {
       margin-left: 170px;
     }
-    .bend::after {
+    .fs::after {
       margin-left: 170px;
     }
     .ptest::after {
@@ -1050,22 +1078,22 @@ close:hover {
       margin-left: 35px;
     }
     .ui::after {
-      margin-left: 240px;
+      margin-left: 110%;
     }
     .graphic::after {
-      margin-left: 240px;
+      margin-left: 110%;
     }
     .python::after {
-      margin-left: 240px;
+      margin-left: 110%;
     }
-    .fend::after {
-      margin-left: 240px;
+    .fs::after {
+      margin-left: 110%;
     }
-    .bend::after {
-      margin-left: 240px;
+    .cpp::after {
+      margin-left: 110%;
     }
     .ptest::after {
-      margin-left: 240px;
+      margin-left: 110%;
     }
   }
   toright {
@@ -1081,25 +1109,144 @@ close:hover {
     margin-bottom: 20px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 490px) {
+  detail toright p {
+    margin-left: 20px;
+  }
+  detail toleft h1::before,
+  detail toright h1::before {
+    width: 15%;
+  }
+  #about h1::before {
+    width: 15%;
+    margin-top: 40px;
+  }
+  #about h1 {
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 28px;
+  }
   #about p {
-    margin-left: -40%;
-    font-size: 12px;
-    margin-top: 25%;
+    margin-left: -31%;
   }
   #about span {
     font-size: 14px;
   }
-  #about {
-    padding-right: 2%;
-    padding-left: 1%;
-  }
   #writing {
-    display: inline-grid;
-    padding-bottom: 30%;
-    padding-top: 20%;
+    width: 80vw;
+    left: 10%;
+    flex-direction: column;
   }
-}
+  #writing a {
+    width: auto;
+  }
+  .about st {
+    font-size: 58px;
+  }
+  .progress {
+    margin-left: 20px;
+  }
+  toleft ::after {
+    margin-left: 200px;
+  }
+  .writing .fa {
+    position: relative;
+    top: 18px;
+    left: 45px;
+  }
+  .projects .fa {
+    top: 15px;
+
+    position: relative;
+    left: 35px;
+  }
+  .gallery .fa {
+    position: relative;
+    top: 15px;
+    left: 34px;
+  }
+  .aboutme .fa {
+    position: relative;
+    top: 15px;
+    left: 30px;
+  }
+  .men:hover {
+    cursor: initial;
+    box-shadow: 0 0 10px transparent;
+  }
+  .m:hover {
+    cursor: pointer;
+  }
+  e:hover {
+    cursor: pointer;
+  }
+  main {
+    border-bottom: 0;
+    height: 95vh;
+  }
+  detail {
+    display: block;
+  }
+  .gallery,
+  .aboutme,
+  .projects,
+  .writing {
+    position: sticky;
+    margin: 0;
+    top: 0;
+    flex: 1;
+    border-radius: 0;
+    background: transparent;
+    height: 100%;
+    width: auto;
+    width: 60px;
+    height: 60px;
+  }
+  .projects {
+    left: 5%;
+    bottom: 30%;
+  }
+  .menu *:after {
+    display: none;
+  }
+  .menu {
+    position: relative;
+    width: 100%;
+    background: #183d57;
+    height: 14%;
+    display: flex;
+    margin-top: auto;
+    margin-left: 0;
+    padding: 0;
+    padding-right: 20px;
+    z-index: 1100;
+  }
+  .menu .fa {
+    font-size: 30px;
+  }
+  .dp::after {
+    width: 180px;
+    height: 180px;
+  }
+  .dp::before {
+    width: 150px;
+    height: 150px;
+  }
+  .dp {
+    width: 180px;
+    height: 180px;
+
+    position: fixed;
+    left: 25%;
+    top: 45%;
+  }
+  .about {
+    position: fixed;
+  }
+  .about h1 {
+    font-size: 48px;
+  }
+} /*
 @media only screen and (max-width: 416px) {
   .gallery,
   .aboutme,
@@ -1229,7 +1376,7 @@ close:hover {
     margin-top: 81%;
     margin-left: -14%;
   }
-}
+}*/
 #loader {
   width: 100vw;
   background: #0e2535;
