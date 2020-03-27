@@ -1,3 +1,11 @@
+$(function() {
+  $(".rslides").responsiveSlides();
+});
+
+$(".dp").on("click", function() {
+  $("#.dp::before").css("background", "url(" + backgroundImg[1] + ")");
+});
+
 function writeopen() {
   var $write = $("#writing");
   $write.removeClass("close");
@@ -15,6 +23,16 @@ function aboutopen() {
 }
 function aboutclose() {
   var $write = $("#about");
+  $write.addClass("close");
+  $write.removeClass("open");
+}
+function galleryopen() {
+  var $write = $("#gallery");
+  $write.removeClass("close");
+  $write.addClass("open");
+}
+function galleryclose() {
+  var $write = $("#gallery");
   $write.addClass("close");
   $write.removeClass("open");
 }
