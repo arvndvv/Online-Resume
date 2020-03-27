@@ -1022,6 +1022,10 @@ close:hover {
   }
 
   @media only screen and (max-width: 650px) {
+     #gallery {
+      width: 100vw;
+      left: 0;
+    }
     .writing {
       top: 78%;
       left: 45%;
