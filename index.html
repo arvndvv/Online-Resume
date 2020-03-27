@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="fav.png" />
     <title>ARVNDVV</title>
+    <link rel="stylesheet" href="gallery.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lobster+Two|Mitr|Monoton|Pacifico|Sen&display=swap"
@@ -40,7 +41,7 @@
           <div class="men aboutme" onclick="aboutopen()">
             <span class="fa m fa-address-card"></span><e>About</e>
           </div>
-          <div class="men gallery">
+          <div class="men gallery" onclick="galleryopen()">
             <span class="fa m fa-image"></span><e>gallery</e>
           </div>
           <div class="men projects">
@@ -54,7 +55,7 @@
         </div>
         <div class="dp" onclick="bgm()"></div>
         <audio id="bgm">
-          <source src="bgm.mp3" type="audio/mpeg" loop />
+          <source src="bgm.mp3" type="audio/mpeg" />
         </audio>
       </main>
 
@@ -138,9 +139,99 @@
         >
       </p>
     </span>
-
+    <span id="gallery">
+      <close onclick="galleryclose()">X</close>
+      <div class="callbacks_container">
+        <ul class="rslides" id="slider4">
+          <li>
+            <img src="gallery/1.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/2.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/3.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/4.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/5.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/6.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/7.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/8.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/9.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/10.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/11.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/12.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/13.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/14.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/15.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/16.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/17.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/18.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/19.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/20.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/21.jpg" alt="" />
+          </li>
+          <li>
+            <img src="gallery/22.jpg" alt="" />
+          </li>
+        </ul>
+      </div>
+    </span>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="responsiveslides.js"></script>
+    <script>
+      // You can also use "$(window).load(function() {"
+      $(function() {
+        $("#slider4").responsiveSlides({
+          auto: false,
+          pager: false,
+          nav: true,
+          speed: 500,
+          namespace: "callbacks",
+          before: function() {
+            $(".events").append("<li>before event fired.</li>");
+          },
+          after: function() {
+            $(".events").append("<li>after event fired.</li>");
+          }
+        });
+      });
+    </script>
     <script src="app.js"></script>
   </body>
 </html>
