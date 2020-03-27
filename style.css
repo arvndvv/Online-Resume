@@ -9,6 +9,45 @@ body {
   background: #0b151d;
   overflow-x: hidden;
 }
+.rslides {
+  position: relative;
+  list-style: none;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+#gallery {
+  padding-bottom: 0 !important;
+  min-height: auto !important;
+}
+#gallery close {
+  z-index: 1251;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
 #container {
   background: #0e2535;
   min-height: 100vh;
@@ -79,7 +118,7 @@ main {
   z-index: 1;
   transition: 0.5s ease;
   height: 200px;
-  background: url(ssd.jpg);
+  background: url("1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -672,7 +711,8 @@ hobby {
   opacity: 1;
 }
 #writing,
-#about {
+#about,
+#gallery {
   position: absolute;
   width: 50vw;
   min-height: 50vh;
