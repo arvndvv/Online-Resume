@@ -2,9 +2,7 @@ $(function() {
   $(".rslides").responsiveSlides();
 });
 
-$(".dp").on("click", function() {
-  $("#.dp::before").css("background", "url(" + backgroundImg[1] + ")");
-});
+
 
 function writeopen() {
   var $write = $("#writing");
