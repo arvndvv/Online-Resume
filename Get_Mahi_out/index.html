@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSD</title>
+</head>
+
+<body>
+    <div class="game">
+        <span class="introimg"></span>
+
+    </div>
+    <div class="start">
+        <span class="msd"></span>
+        <span class="bd">
+            
+        </span>
+
+        <span class="ball" id="go"></span>
+    </div>
+    <div class="begin">
+        <h1>Get Mahi OUT !</h1>
+        <span class="batready"></span>
+
+        <p>Click on the ball to Bowl!</p>
+        <img class="bowl" src="img/ball.png">
+        <p class="score">Score:0</p>
+
+        <p class="commentry">MS Dhoni is ready for the next ball!</p>
+        <p class="battingcommentry">batting</p>
+
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .start {
+            width: 100vw;
+            position: relative;
+            height: 100vh;
+            background-image: url("img/grass.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .ball:before {
+            content: "CLICK HERE=>";
+            position: absolute;
+            font-size: 1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            top: 50%;
+            text-shadow: 1px 1px 1px #dc412c;
+            left: -70%;
+            color: whitesmoke;
+            font-weight: 800;
+            transition: 0.4s ease;
+            animation: bounce 1s ease infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(20px);
+            }
+        }
+        
+        .ball {
+            z-index: 2;
+            position: absolute;
+            bottom: 10px;
+            right: 5vmin;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 5;
+            width: 35vmin;
+            height: 35vmin;
+            background-image: url("img/bgball.jpg");
+            background-size: 225%;
+            /* background-position-y: top; */
+            background-repeat: no-repeat;
+            background-position: 90%;
+        }
+        
+        .bd {
+            width: 60vmin;
+            height: 100vmin;
+            position: absolute;
+            top: 0vmin;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url("img/hbd.gif"), url("img/msd.jpg");
+            background-size: 120%, 100%;
+            background-position: top, bottom;
+            background-position-y: 0em, 5em;
+            background-repeat: no-repeat, no-repeat;
+            background-blend-mode: screen;
+            box-shadow: 5px 10px 10px #333;
+            /*filter: grayscale(1);*/
+        }
+        
+        .introimg {
+            width: 100vw;
+            height: 100vh;
+            background: url("img/cover.jpg");
+            position: absolute;
+            z-index: 25;
+            top: 0;
+            left: 0;
+            transition: 0.4s ease;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: fade 1s 1s ease forwards;
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        .begin {
+            width: 100vw;
+            height: 100vh;
+            background: #ebe3c3;
+            position: absolute;
+            z-index: 30;
+            top: 0;
+            transform: translateY(-100vh);
+            transition: 0.3s ease;
+        }
+        
+        .begin p {
+            font-family: monospace;
+            margin: 15px;
+            text-align: center;
+            color: #5c5d5e;
+        }
+        
+        .begin h1 {
+            font-family: monospace;
+            text-align: center;
+            color: #2a6abc;
+        }
+        
+        .begin .commentry,
+        .battingcommentry,
+        .score {
+            transform: translate(0, 25vmin);
+        }
+        
+        .inview {
+            transform: translateY(0);
+        }
+        
+        .inviewmsd {
+            top: 20%!important;
+            left: 50%!important;
+            transform: translate(-50%, -20%)!important;
+        }
+        
+        .bowl {
+            width: 30vmin;
+            transform: translate(65vmin, 65vh);
+        }
+        
+        .batready {
+            width: 50vmin;
+            height: 50vmin;
+            position: absolute;
+            top: 0%;
+            border-radius: 50%;
+            background-image: url("img/static.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-blend-mode: screen;
+            left: 50%;
+            top: 0;
+            transform: translateY(-100vh);
+            transition: 0.3s ease;
+            z-index: 31;
+        }
+        
+        .shot {
+            background-image: url("img/shot.gif");
+        }
+    </style>
+    <script>
+        function luck(n) {
+            var flag, number = n,
+                remainder, addition = 0;
+
+            flag = number;
+            while (number > 0) {
+                remainder = number % 10;
+                addition = addition + remainder * remainder * remainder;
+                number = parseInt(number / 10);
+            }
+
+            if (addition == flag) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+
+        let ball = document.getElementById("go");
+        ball.addEventListener("click", game);
+
+        function game() {
+            document.querySelector(".begin").classList.add("inview")
+            document.querySelector(".batready").classList.add("inviewmsd")
+        }
+        let bowl = document.querySelector(".bowl");
+        bowl.addEventListener("click", dobowl)
+        var score = 0
+        var wkt = 0
+
+        function dobowl() {
+
+            var bowltype = ["an Inswing", "an Outswing", "a Bouncer", "a Full-length", "a Yorker", "a Good-Length", "a Short-Length"]
+            var chosenbowl = bowltype[Math.floor(Math.random() * bowltype.length)];
+            var speed = Math.floor(Math.random() * 28) + 134;
+            let num = Math.floor(Math.random() * 1000) + 1;
+
+
+            let batcm = document.querySelector(".begin .battingcommentry")
+            let result = luck(num)
+            let commentry = document.querySelector(".begin .commentry")
+
+            if (result == 1) {
+                batcm.innerHTML = "Owaaaahh! You are a brilliant bowler and luck favoured you! You Got MSD out!<br><br>Comment Your delivery type and speed when you got him out!";
+                wkt = wkt + 1;
+                document.querySelector(".score").innerHTML = "Score: " + score + "/" + wkt;
+
+            } else {
+                batcm.innerHTML = "Mahi hit your " + speed + " kph delivery for a Six";
+                score = score + 6;
+                document.querySelector(".score").innerHTML = "Score: " + score + "/" + wkt;
+            }
+            commentry.innerHTML = "You bowled " + chosenbowl + " delivery,having " + speed + " KPH speed!";
+            setTimeout(function() {
+
+            }, 1500)
+
+            setTimeout(function() {
+                document.querySelector(".batready").classList.add("shot");
+            }, 300);
+            setTimeout(function() {
+                document.querySelector(".batready").classList.remove("shot");
+
+            }, 800);
+
+            setTimeout(function() {
+
+            }, 1000)
+
+        }
+    </script>
+</body>
+
+</html>
